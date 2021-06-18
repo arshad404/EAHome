@@ -70,7 +70,7 @@ class Signin extends Component {
             </form>
           </div>
           <div className="column sign-col-img">
-            <img className="img-sign" src={rightImg}></img>
+            <img className="img-sign" alt="yoga-boy" src={rightImg}></img>
           </div>
         </div>
       </>

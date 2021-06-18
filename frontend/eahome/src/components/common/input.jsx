@@ -8,7 +8,6 @@ const Input = ({ name, label, value, onChange, error }) => {
       <input
         value={value}
         onChange={onChange}
-        autoFocus
         id={name}
         name={name}
         type="text"
