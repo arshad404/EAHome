@@ -1,8 +1,30 @@
-.back-first{
-    height: 50%;
-    /* width: 100vw;    */
-    background: url('./assets/landing.jpg') no-repeat center/cover;
-    background-position: 0% 25%;
+@import url("https://fonts.googleapis.com/css2?family=Benne&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Benne", serif;
+}
+
+.back-first {
+  height: 50%;
+  /* width: 100vw;    */
+  background: url("./assets/landing.jpg") no-repeat center/cover;
+  background-position: 0% 25%;
+}
+
+.sign-landing {
+  height: 50%;
+  /* width: 100vw;    */
+  background: url("./assets/sign.jpg") no-repeat center/cover;
+  background-position: 0% 20%;
+}
+
+.leftview-sign {
+  height: 50%;
+  /* width: 100vw;    */
+  background: url("./assets/signin.jpg") no-repeat center/cover;
+  background-position: 0% 25%;
 }
 
 /* type-writer effect */
@@ -37,4 +59,75 @@
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);
+}
+
+/* signin page  */
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0px;
+}
+
+.img-sign {
+  height: 100vh;
+  width: 100%;
+}
+
+.login-form {
+  background: #008b8b;
+}
+
+.form-group {
+  color: aliceblue;
+  padding: 10px;
+}
+
+.login-font {
+  color: aliceblue;
+}
+
+.form-input {
+  color: black;
+  margin: 10px;
+  padding: 5px;
+}
+
+.form-input-email {
+  color: black;
+  margin: 10px;
+  padding: 5px;
+  margin-left: 33px;
+}
+
+.log-button {
+  background: blanchedalmond;
+  padding: 8px;
+  border-radius: 30%;
+  margin-left: 30px;
+}
+
+.log-button:hover {
+  background-color: #fbd4f2;
+  font: bold;
+  font-size: large;
+}
+
+/* media queries */
+@media only screen and (max-width: 600px) {
+  .column {
+    display: flex;
+    background: url("./assets/sign.jpg") no-repeat center/cover;
+  }
+
+  .form-input .form-input-email {
+    color: black;
+  }
+
+  .sign-col-img {
+    display: none;
+  }
 }
