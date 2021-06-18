@@ -78,7 +78,7 @@
 }
 
 .login-form {
-  background: #4c566a;
+  background: #008b8b;
 }
 
 .form-group {
@@ -96,15 +96,24 @@
   padding: 5px;
 }
 
+.form-input-email {
+  color: black;
+  margin: 10px;
+  padding: 5px;
+  margin-left: 33px;
+}
+
 .log-button {
   background: blanchedalmond;
   padding: 8px;
   border-radius: 30%;
+  margin-left: 30px;
 }
 
 .log-button:hover {
   background-color: #fbd4f2;
   font: bold;
+  font-size: large;
 }
 
 /* media queries */
