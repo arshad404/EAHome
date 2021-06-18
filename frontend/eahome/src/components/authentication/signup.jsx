@@ -5,7 +5,13 @@ import Input from "../common/input";
 
 class Signup extends Component {
   state = {
-    account: { email: "", password: "", password2: "" },
+    account: {
+      email: "",
+      password: "",
+      password2: "",
+      trainee: false,
+      trainer: false,
+    },
   };
 
   handleSubmit = (e) => {

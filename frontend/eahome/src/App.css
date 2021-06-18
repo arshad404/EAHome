@@ -122,6 +122,11 @@
     display: flex;
     background: url("./assets/sign.jpg") no-repeat center/cover;
   }
+
+  .form-input .form-input-email {
+    color: black;
+  }
+
   .sign-col-img {
     display: none;
   }

@@ -6,12 +6,32 @@ import Input from "../common/input";
 class Signin extends Component {
   state = {
     account: { email: "", password: "" },
+    errors: {},
+  };
+
+  validate = () => {
+    const errors = {};
+
+    const { account } = this.state;
+    if (account.email.trim() === "") {
+      errors.email = "Username is required";
+    }
+    if (account.password.trim() === "") {
+      errors.password = "Password is required";
+    }
+
+    return Object.keys(errors).length === 0 ? null : errors;
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Submitter");
+    const errors = this.validate();
+    console.log(errors);
+    this.setState({ errors: errors || {} });
+    if (errors) return;
+
+    console.log(this.state.account);
   };
 
   handleChange = ({ currentTarget: input }) => {
@@ -21,7 +41,7 @@ class Signin extends Component {
   };
 
   render() {
-    const { account } = this.state;
+    const { account, errors } = this.state;
 
     return (
       <>
@@ -36,13 +56,16 @@ class Signin extends Component {
                 value={account.email}
                 label="Email"
                 onChange={this.handleChange}
+                error={errors.email}
               />
               <Input
                 name="password"
                 value={account.password}
                 label="Password"
                 onChange={this.handleChange}
+                error={errors.password}
               />
+
               <button className="log-button">Login</button>
             </form>
           </div>
