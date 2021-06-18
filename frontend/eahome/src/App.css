@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Benne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Benne", serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .back-first {
@@ -93,27 +93,30 @@
 .form-input {
   color: black;
   margin: 10px;
-  padding: 5px;
+  padding: 7px;
+  border-radius: 25px;
 }
 
 .form-input-email {
   color: black;
   margin: 10px;
-  padding: 5px;
+  padding: 7px;
   margin-left: 33px;
+  border-radius: 25px;
 }
 
 .log-button {
   background: blanchedalmond;
-  padding: 8px;
+  padding: 7px 15px;
   border-radius: 30%;
   margin-left: 30px;
+  border-radius: 25px;
 }
 
 .log-button:hover {
-  background-color: #fbd4f2;
-  font: bold;
-  font-size: large;
+  background-color: #f5ecf3;
+  color: white;
+  background: black;
 }
 
 /* media queries */
