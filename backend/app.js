@@ -6,6 +6,7 @@ const controller = require("./controllers");
 const authRoute = require("./routers/route.auth");
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/api/v1", (req, res) => {
   // let error = new Error("wrong route");
