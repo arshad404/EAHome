@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-const Input = ({ name, label, value, onChange, error }) => {
+const Input = ({ name, label, value, onChange, error, fieldType }) => {
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
@@ -10,8 +10,10 @@ const Input = ({ name, label, value, onChange, error }) => {
         onChange={onChange}
         id={name}
         name={name}
-        type="text"
-        className={label === "Email" ? "form-input-email" : "form-input"}
+        type={fieldType}
+        className={
+          label === "Email" || "name" ? "form-input-email" : "form-input"
+        }
       />
       {error && <div className="text-yellow-400 px-16">{error}</div>}
     </div>

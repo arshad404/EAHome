@@ -6,6 +6,7 @@ import Input from "../common/input";
 class Signup extends Component {
   state = {
     account: {
+      name: "",
       email: "",
       password: "",
       password2: "",
@@ -29,6 +30,9 @@ class Signup extends Component {
     const { account } = this.state;
     if (account.email.trim() === "") {
       errors.email = "Email is required";
+    }
+    if (account.name.trim() === "") {
+      errors.name = "Name is required";
     }
     if (!this.isEmail(account.email)) {
       errors.email = "Enter a valid email address";
@@ -77,11 +81,20 @@ class Signup extends Component {
               className="flex flex-col h-screen justify-center items-center space-y-3"
             >
               <Input
+                name="name"
+                value={account.name}
+                label="Name"
+                onChange={this.handleChange}
+                error={errors.name}
+                fieldType="text"
+              />
+              <Input
                 name="email"
                 value={account.email}
                 label="Email"
                 onChange={this.handleChange}
                 error={errors.email}
+                fieldType="text"
               />
               <Input
                 name="password"
@@ -89,6 +102,7 @@ class Signup extends Component {
                 label="Password"
                 onChange={this.handleChange}
                 error={errors.password}
+                fieldType="password"
               />
               <Input
                 name="password2"
@@ -97,6 +111,7 @@ class Signup extends Component {
                 onChange={this.handleChange}
                 placeholder={"type again"}
                 error={errors.password2}
+                fieldType="password"
               />
 
               <label htmlFor="trainer">
