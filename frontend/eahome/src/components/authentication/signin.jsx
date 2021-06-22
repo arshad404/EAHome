@@ -57,6 +57,7 @@ class Signin extends Component {
                 label="Email"
                 onChange={this.handleChange}
                 error={errors.email}
+                fieldType="text"
               />
               <Input
                 name="password"
@@ -64,6 +65,7 @@ class Signin extends Component {
                 label="Password"
                 onChange={this.handleChange}
                 error={errors.password}
+                fieldType="password"
               />
 
               <button className="log-button">Login</button>
