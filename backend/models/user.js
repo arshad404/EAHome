@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 module.exports = (sequelize, DataTypes) => {
   const users = sequelize.define(
@@ -21,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      trainer: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
     },
     {
       hooks: {
@@ -42,5 +47,18 @@ module.exports = (sequelize, DataTypes) => {
   users.prototype.validPassword = async (password, hash) => {
     return await bcrypt.compareSync(password, hash);
   };
+
+  users.prototype.generateToken = () => {
+    const token = jwt.sign(
+      {
+        _id: this._id,
+        userId: this.userId,
+        role: this.role,
+      },
+      process.env.JWT_PRIVATE_KEY
+    );
+    return token;
+  };
+
   return users;
 };
