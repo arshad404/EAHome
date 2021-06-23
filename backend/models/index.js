@@ -24,7 +24,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => {
     console.log("Model sync");
   })
