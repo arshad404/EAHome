@@ -3,8 +3,8 @@ const Users = db.users;
 
 module.exports.addUser = async (req, res) => {
     let data = await Users.create({
-        "name": "arif",
-        "email": "arif@fmai.com",
+        "name": "abc",
+        "email": "abc@gmail.com",
         "password": "123456"
     });
     return res.status(200).json({"status": data});

@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 require("dotenv").config();
 const db = require("../models");
 const Users = db.users;
+const { getUserDataByEmail } = require("../clients/pg-clients/user");
 
 module.exports.signup = async (req, res, next) => {
   try {
@@ -28,6 +29,9 @@ module.exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await Users.findOne({ where: { email: email } });
+    // const user = await getUserDataByEmail(email);
+    // user = user[0][0];
+    // console.log(user, "*******************", user[0][0].name);
     if (user) {
       let matchPass = await bcrypt.compare(password, user.password);
       if (matchPass) {
